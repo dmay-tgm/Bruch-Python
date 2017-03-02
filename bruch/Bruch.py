@@ -24,10 +24,10 @@ class Bruch(object):
             TypeError: if the given argument is not a fraction
             or the given arguments are not two ints
         """
-        if type(zaehler) == Bruch:
+        if isinstance(zaehler, Bruch):
             self.zaehler = zaehler.zaehler
             self.nenner = zaehler.nenner
-        elif type(zaehler) == int and type(nenner) == int:
+        elif isinstance(zaehler, int) and isinstance(nenner, int):
             if nenner == 0:
                 raise ZeroDivisionError()
             else:
@@ -89,14 +89,13 @@ class Bruch(object):
         else:
             return "(" + str(self.zaehler) + "/" + str(self.nenner) + ")"
 
-    def __pow__(self, power, modulo=None):
+    def __pow__(self, power):
         """
         Raises the fraction to the power of the argument power.
         This is done by raising the numerator
         and the denominator to the power of the argument power.
 
         :param power: the exponent
-        :param modulo: Not used.
         :return: result of fraction to the power of argument power
         """
         return Bruch(self.zaehler ** power, self.nenner ** power)
