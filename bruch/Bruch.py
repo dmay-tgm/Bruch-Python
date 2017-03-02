@@ -1,3 +1,6 @@
+"""This module includes a Bruch class."""
+
+
 class Bruch(object):
     """Bruch is a class to represent mathematical fractions."""
 
@@ -18,7 +21,8 @@ class Bruch(object):
         :raises:
             ZeroDivisionError: if the denominator is 0
         :raises:
-            TypeError: if the given argument is not a fraction or the given arguments are not two ints
+            TypeError: if the given argument is not a fraction
+            or the given arguments are not two ints
         """
         if type(zaehler) == Bruch:
             self.zaehler = zaehler.zaehler
@@ -87,7 +91,9 @@ class Bruch(object):
 
     def __pow__(self, power, modulo=None):
         """
-        Raises the fraction to the power of the argument power. This is done by raising the numerator and the denominator to the power of the argument power.
+        Raises the fraction to the power of the argument power.
+        This is done by raising the numerator
+        and the denominator to the power of the argument power.
 
         :param power: the exponent
         :param modulo: Not used.
@@ -166,7 +172,8 @@ class Bruch(object):
         :return: the sum
         """
         other = Bruch(other)
-        return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner, self.nenner * other.nenner)
+        return Bruch(self.zaehler * other.nenner + other.zaehler * self.nenner,
+                     self.nenner * other.nenner)
 
     def __iadd__(self, other):
         """
