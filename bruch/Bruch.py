@@ -2,7 +2,7 @@
 
 
 class Bruch(object):
-    """Bruch is a class to represent mathematical fractions."""
+    """Bruch is a class to  represent mathematical fractions."""
 
     def __iter__(self):
         """
